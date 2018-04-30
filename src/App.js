@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import './App.css';
-import fetchPostsWithRedux from './reducers/fetchReducers';
-import mapStateToProps from './index';
-import logo from './logi.png'
+import './index.css';
+
+import logo from './image/logo.png'
 
 class App extends Component
 {
@@ -13,7 +12,6 @@ class App extends Component
   }
   updateInterval()
   {
-    const { dispatch } = this.props
     setInterval( () =>
     { this.props.fetchPostsWithRedux() }, 60000 )
   }

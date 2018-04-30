@@ -3,7 +3,7 @@ import
     fetchRequest,
     fetchSuccess,
     fetchError
-} from './../actions/fetchAction';
+} from './../action/fetchAction';
 
 export function fetchPosts()
 {
