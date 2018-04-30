@@ -1,22 +1,40 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import fetchPostsWithRedux from './reducers/fetchReducers';
+import mapStateToProps from './index';
+import logo from './logi.png'
 
 class App extends Component
 {
+  componentDidMount()
+  {
+    this.props.fetchPostsWithRedux();
+    this.updateInterval()
+  }
+  updateInterval()
+  {
+    const { dispatch } = this.props
+    setInterval( () =>
+    { this.props.fetchPostsWithRedux() }, 60000 )
+  }
   render()
   {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={ logo } className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <figure className="swing">
+          <img src={ logo } alt="logo" className="logo" />
+        </figure>
+        <br /><br /><br />
+        { this.props.posts && this.props.posts.map( ( post, i ) => <div key={ i }
+          className="draw" >
+
+          <img src={ post.thumbnail } alt="Images" className="thumbnail" />
+          <p className="pra">{ post.title }</p>
+        </div>
+
+        ) }
       </div>
-    );
+    )
   }
 }
 
