@@ -5,9 +5,10 @@ First of all, special Thanks to Cranework OY for giving me the opportunity to ex
 ### `How to run the app:` 
 
 ```js
-git clone https://github.com/usmanali598/ReduxFetchRedditApi.git
-npm install
-npm start
+1. git clone https://github.com/usmanali598/ReduxFetchRedditApi.git
+2. cd ReduxFetchRedditApi
+3. npm install
+4. npm start
 ```
 
 ### `About App:`
